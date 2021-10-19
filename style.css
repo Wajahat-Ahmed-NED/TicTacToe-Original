@@ -7,15 +7,19 @@
     margin: 0 ;
     padding: 0;
 }
+body{
+    /* background-color: rgb(252, 240, 217); */
+}
 nav{
     background-color: rgb(92, 0, 92);
     color: honeydew;
-    height: 65px;
-    font-size: 2em;
+    height: 55px;
+    font-size: 1.5em;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 12px ;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Baloo Bhaina 2', cursive;
 
 }
 nav ul{
@@ -23,13 +27,22 @@ nav ul{
     list-style-type: none;
 }
 .gameContainer{
+    /* width: 200px; */
     /* background-color: khaki; */
     display: flex;
     justify-content: center;
-    margin-top: 50px; ;
+    align-items: center;
+    margin-top: 50px; 
 }
+/* .imgBox{
+    display: flex;
+    justify-content: center;
+    margin: 0 50px;
+    /* width: 400px; */
+    /* border: 2px solid black; */
 
 .container{
+    /* width: 500px; */
     display: grid;
     grid-template-rows: repeat(3,10vw);
     grid-template-columns: repeat(3,10vw);
@@ -47,9 +60,12 @@ nav ul{
 .gameInfo{
     padding: 0 34px;
     font-family: 'Baloo Bhaina 2', cursive;
+    text-align: center;
+
 }
 img{
-    display: none;
+   width: 0;
+   /* transition: width 1s ease-in-out; */
 }
 .br-0{
     border-right: 0;
@@ -66,3 +82,30 @@ border-top: 0;
 .bb-0{
     border-bottom: 0;
 }
+button{
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    background-color: yellow;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    font-size: 1.5em;
+    padding: 10px;
+    /* margin: 0px 5px; */
+    cursor:pointer
+}
+button:hover{
+    color: goldenrod;
+    background-color:white;
+    border: 3px solid yellow;
+}
+button:active{
+    background-color: gold;
+}
+.info{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 13px;
+}
+

@@ -32,6 +32,7 @@ const checkWin=()=>{
 
             
             audioTurn.pause()
+            gameover.play()
             gameStatus=false
             document.getElementsByTagName("img")[0].style.width="200px "
             setTimeout(()=>{

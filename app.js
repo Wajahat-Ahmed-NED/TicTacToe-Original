@@ -7,7 +7,7 @@ let gameStatus=true
 const changeTurn=()=>{
     return turn==="X"?"O":"X"
 }
-
+let counter=0
 const checkWin=()=>{
     let boxtext=document.getElementsByClassName("boxtext")
     let wins=[
@@ -23,15 +23,26 @@ const checkWin=()=>{
     ]
 
     wins.forEach((e)=>{
+        if(counter==0){
         if((boxtext[e[0]].innerText===boxtext[e[1]].innerText)&&(boxtext[e[0]].innerText===boxtext[e[2]].innerText) && boxtext[e[0]].innerText!==""){
             document.getElementsByClassName("info")[0].innerText=boxtext[e[0]].innerText+" wins"
             boxtext[e[0]].style.color="red"
             boxtext[e[1]].style.color="red"
             boxtext[e[2]].style.color="red"
-            turn=""
+
+            
             audioTurn.pause()
             gameStatus=false
             document.getElementsByTagName("img")[0].style.width="200px "
+            setTimeout(()=>{
+
+                alert("Congratulations "+boxtext[e[0]].innerText +" Wins Game")
+                turn=""
+            },1000)
+            counter=1
+        }}
+        else{
+            boxtext[e[0]].innerText=""
         }
     })
 }
@@ -60,7 +71,7 @@ reset.addEventListener('click',()=>{
 })
     turn="X"
     audioTurn.play()
-    
+    counter=0
     document.getElementsByClassName('info')[0].innerText="Turn For "+turn;
     gameStatus=true
     document.getElementsByTagName("img")[0].style.width="0px "
